@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Button } from "@material-ui/core";
 
 const Header = () => {
   return (
-    <AppBar>
+    <AppBar position="sticky">
       <Toolbar
         style={{
           height: "5rem",
