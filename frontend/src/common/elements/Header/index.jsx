@@ -11,7 +11,7 @@ const Header = () => {
           justifyContent: "space-between",
         }}
       >
-        <img src="logo.png" style={{ height: "4rem" }} />
+        <img src="logo.png" alt="logo" style={{ height: "4rem" }} />
         <Button color="inherit">Home</Button>
       </Toolbar>
     </AppBar>
