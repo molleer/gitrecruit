@@ -18,7 +18,22 @@ services:
       context: ./backend
       dockerfile: dev.Dockerfile
     image: mollee/gitrecruit-backend:dev
+    environment:
+      DB_USER: gitrecruit
+      DB_NAME: gitrecruit
+      DB_PASS: password
+      DB_HOST: db
+      DB_PORT: 5432
+    depends_on:
+      - db
     ports:
       - 8080:8080
     volumes:
       - ./backend/src:/usr/share/app/src
+
+  db:
+    image: postgres:10
+    environment:
+      POSTGRES_USER: gitrecruit
+      PORTGRES_DB: gitrecruit
+      POSTGRES_PASSWORD: password
