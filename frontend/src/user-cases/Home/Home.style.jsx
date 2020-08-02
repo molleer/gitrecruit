@@ -1,4 +1,6 @@
-import Styled, { keyframes } from "styled-components";
+/* eslint-disable new-cap */
+import Styled, {keyframes} from 'styled-components';
+import {OutlinedInput} from '@material-ui/core';
 
 const typing = keyframes`
   from { width: 0 }
@@ -20,4 +22,19 @@ export const TypeWriter = Styled.h1`
     ${typing} 3.5s steps(30, end),
     ${blinkCaret} .75s step-end infinite;
   max-width: 410px;
+`;
+
+export const FeaturedWrapper = Styled.div`
+  margin-top: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: none;
+`;
+
+export const SearchField = Styled(OutlinedInput)`
+  width: 100%;
+  max-width: 40rem;
+  margin-top: 3rem;
 `;
