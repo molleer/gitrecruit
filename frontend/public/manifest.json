@@ -11,6 +11,18 @@
       "src": "logo.png",
       "type": "image/png",
       "sizes": "1080x1080"
+    },
+    {
+      "src": "elearning.ico",
+      "type": "image/png"
+    },
+    {
+      "src": "idea.png",
+      "type": "image/png"
+    },
+    {
+      "src": "meeting.png",
+      "type": "image/png"
     }
   ],
   "start_url": ".",
