@@ -5,7 +5,7 @@ services:
       context: ./frontend
       dockerfile: dev.Dockerfile
     image: mollee/gitrecruit-frontend:dev
-    stdin_open: "true"
+    stdin_open: true
     depends_on:
       - backend
     ports:

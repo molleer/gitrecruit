@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "target": "ES6",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "moduleResolution": "Node"
   },
   "include": ["src"],
   "exclude": ["node_modules", "migrations"]
