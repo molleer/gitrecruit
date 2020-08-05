@@ -1,21 +1,19 @@
 import express from 'express';
 import passport from 'passport';
+import {
+  handleGithubLogin,
+  handleGithubCallback,
+} from '../controllers/auth.controller';
 
 export const getAuthRoutes = (
   pass: passport.Authenticator,
   router: express.Router
 ) => {
-  router.get('/login/github', pass.authenticate('github'));
-
+  router.get('/login/github', handleGithubLogin(pass));
   router.get(
     '/callback/github',
-    pass.authenticate('github', {failureRedirect: 'http://localhost:3000/'}),
-    function (req, res) {
-      // Successful authentication, redirect home.
-
-      console.log('Successful login');
-      res.redirect('http://localhost:3000/');
-    }
+    passport.authenticate('github', {failureRedirect: '/'}),
+    handleGithubCallback()
   );
   return router;
 };

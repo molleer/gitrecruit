@@ -6,7 +6,7 @@ export const init = (passport) => {
       {
         clientID: process.env.GITHUB_CLIENT_ID,
         clientSecret: process.env.GITHUB_CLIENT_SECRET,
-        callbackURL: 'http://localhost:8080/api/callback/github',
+        callbackURL: process.env.GITHUB_CALLBACK_URI,
       },
       function (accessToken, refreshToken, profile, cb) {
         console.log(profile);
