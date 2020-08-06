@@ -7,6 +7,7 @@ import Home from './user-cases/Home';
 import NotFound from './user-cases/NotFound';
 import Login from './user-cases/Login';
 import Api from './user-cases/Api';
+import Callback from './user-cases/Callback';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
+        <Route path="/callback" component={Callback} />
         <Route path="/api" component={Api} />
         <Route path="/" component={NotFound} />
       </Switch>

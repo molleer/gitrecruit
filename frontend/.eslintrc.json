@@ -13,6 +13,7 @@
   },
   "plugins": ["react"],
   "rules": {
-    "spaced-comment": ["error", "never"]
+    "spaced-comment": ["error", "never"],
+    "indent": ["error", 2]
   }
 }
