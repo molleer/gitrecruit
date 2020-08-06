@@ -5,6 +5,7 @@ import {BrowserRouter, Switch} from 'react-router-dom';
 import {Route} from 'react-router';
 import Home from './user-cases/Home';
 import NotFound from './user-cases/NotFound';
+import Login from './user-cases/Login';
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/login" component={Login} />
         <Route path="/" component={NotFound} />
       </Switch>
       <Footer />
