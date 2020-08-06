@@ -1,5 +1,6 @@
 import React from 'react';
 import {AppBar, Toolbar, Button} from '@material-ui/core';
+import {Link} from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -12,7 +13,14 @@ const Header = () => {
         }}
       >
         <img src="logo.png" alt="logo" style={{height: '4rem'}} />
-        <Button color="inherit">Home</Button>
+        <div>
+          <Button color="inherit" component={Link} to="/">
+            Home
+          </Button>
+          <Button color="inherit" component={Link} to="/login">
+            Login
+          </Button>
+        </div>
       </Toolbar>
     </AppBar>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import {LoginWrapper} from './Login.style';
-import {Card, CardActionArea, Typography} from '@material-ui/core';
+import {Card, Typography} from '@material-ui/core';
 import GithubLoginButton from './elements/GithubLogin';
 
 const Login = () => {
@@ -11,17 +11,20 @@ const Login = () => {
           padding: '1rem',
         }}
       >
-        <CardActionArea
+        <div
           style={{
             display: 'flex',
+            alignItems: 'center',
             justifyContent: 'space-around',
             flexDirection: 'column',
             height: '9rem',
           }}
         >
           <Typography variant="h5">Login/Register</Typography>
-          <GithubLoginButton />
-        </CardActionArea>
+          <GithubLoginButton
+            onClick={() => (window.location.href = '/api/login/github')}
+          />
+        </div>
       </Card>
     </LoginWrapper>
   );
