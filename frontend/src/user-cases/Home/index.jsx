@@ -37,17 +37,27 @@ const Home = () => {
         <InspirationItem
           text="Learn something new"
           icon={
-            <img style={{height: '5rem'}} src="elearning.png" alt="learning" />
+            <img
+              style={{height: '5rem'}}
+              src="icons/elearning.png"
+              alt="learning"
+            />
           }
         />
         <InspirationItem
           text="Fulfill your ideas"
-          icon={<img style={{height: '5rem'}} src="idea.png" alt="idea" />}
+          icon={
+            <img style={{height: '5rem'}} src="icons/idea.png" alt="idea" />
+          }
         />
         <InspirationItem
           text="Collaborate with others"
           icon={
-            <img style={{height: '5rem'}} src="meeting.png" alt="meeting" />
+            <img
+              style={{height: '5rem'}}
+              src="icons/meeting.png"
+              alt="meeting"
+            />
           }
         />
       </div>
