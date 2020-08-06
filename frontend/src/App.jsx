@@ -6,6 +6,7 @@ import {Route} from 'react-router';
 import Home from './user-cases/Home';
 import NotFound from './user-cases/NotFound';
 import Login from './user-cases/Login';
+import Api from './user-cases/Api';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
+        <Route path="/api" component={Api} />
         <Route path="/" component={NotFound} />
       </Switch>
       <Footer />
