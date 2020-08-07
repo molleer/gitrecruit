@@ -1,4 +1,4 @@
-/* eslint-disable new-cap */
+/*eslint-disable new-cap*/
 import Styled, {keyframes} from 'styled-components';
 import {OutlinedInput} from '@material-ui/core';
 

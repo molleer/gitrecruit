@@ -12,7 +12,6 @@ export const init = (passport, query: QueryFunction) => {
         scope: ['user:email'],
       },
       function (accessToken, refreshToken, profile, cb) {
-        console.log(profile);
         findOrCreateUser(
           query,
           {

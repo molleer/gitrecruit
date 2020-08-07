@@ -26,5 +26,9 @@ export const getAuthRoutes = (
   router.get('/login/checkLogin', checkAuth, (req, res) => {
     res.status(200).json(req.user);
   });
+  router.post('/logout', (req, res) => {
+    req.logOut();
+    res.status(200).end();
+  });
   return router;
 };
