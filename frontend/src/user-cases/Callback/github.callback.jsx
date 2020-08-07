@@ -17,7 +17,8 @@ const GithubCallback = () => {
         console.log(res.data);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [params]);
+
   return user ? <Redirect to="/" /> : null;
 };
 
