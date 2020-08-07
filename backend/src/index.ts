@@ -1,7 +1,5 @@
 import * as dotenv from 'dotenv';
-import express, {Router} from 'express';
-import pg from 'pg';
-import {to} from './utils/utils';
+import express from 'express';
 import {initRoutes} from './routes/index';
 import getQuery from './setup/db.setup';
 import session from 'express-session';
@@ -13,8 +11,10 @@ if (process.env.NODE_ENV != 'production') {
   dotenv.config();
 }
 
-init(passport);
 const app = express();
+const query = getQuery();
+
+init(passport, query);
 
 app.use(express.urlencoded({extended: false}));
 app.use(
@@ -28,7 +28,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-initRoutes(app, getQuery(), passport, () => express.Router());
+initRoutes(app, query, passport, () => express.Router());
 
 app.listen(8080, () => {
   console.log('The server is listening to port 8080');

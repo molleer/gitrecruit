@@ -1,10 +1,11 @@
 import express from 'express';
 import {handleGet} from '../controllers/cat.controllers';
 import {getAuthRoutes} from './auth.routes';
+import {QueryFunction} from '../setup/db.setup';
 
 export const initRoutes = (
   app: express.Application,
-  query: Function,
+  query: QueryFunction,
   passport,
   createRouter: () => express.Router
 ) => {

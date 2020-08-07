@@ -1,6 +1,12 @@
 import pg from 'pg';
 
-const getQuery = () => {
+export type QueryFunction = (
+  sql: string,
+  values: Array<any>,
+  convertResult: (res: pg.QueryResult<any>) => any
+) => Promise<any>;
+
+const getQuery = (): QueryFunction => {
   const pool = new pg.Pool({
     user: process.env.DB_USER,
     password: process.env.DB_PASS,
