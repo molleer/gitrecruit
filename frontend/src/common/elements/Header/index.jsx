@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {AppBar, Toolbar, Button} from '@material-ui/core';
 import {Link} from 'react-router-dom';
+import {UserContext} from '../../contexts';
 
 const Header = () => {
+  const [user] = useContext(UserContext);
   return (
     <AppBar position="sticky">
       <Toolbar
@@ -17,9 +19,13 @@ const Header = () => {
           <Button color="inherit" component={Link} to="/">
             Home
           </Button>
-          <Button color="inherit" component={Link} to="/login">
-            Login
-          </Button>
+          {user ? (
+            'You are logged in'
+          ) : (
+            <Button color="inherit" component={Link} to="/login">
+              Login
+            </Button>
+          )}
         </div>
       </Toolbar>
     </AppBar>

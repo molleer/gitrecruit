@@ -1,9 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useContext} from 'react';
 import Axios from 'axios';
 import {Redirect} from 'react-router';
+import {UserContext} from '../../common/contexts';
 
 const GithubCallback = () => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useContext(UserContext);
 
   const params = new URLSearchParams(window.location.search);
   useEffect(() => {
@@ -17,7 +18,8 @@ const GithubCallback = () => {
         console.log(res.data);
       })
       .catch((err) => console.log(err));
-  }, [params]);
+    //eslint-disable-next-line
+  }, []);
 
   return user ? <Redirect to="/" /> : null;
 };
